@@ -9,6 +9,25 @@ Chapter-5
 
 Demo of S2I not working with cprogram somtimes got hanged.
 
+New demo
+########
+  git clone https://github.com/anandpavithran/httpserver-builder-image
+  s2i create httpserver-builder-image httpserver-builder-image 
+  cd httpserver-builder-image/
+  sudo podman build -t httpserver-builder-image:1.0 .
+  mkdir test
+  s2i build mysource2 httpserver-builder-image:1.0 myapp:1.0 --as-dockerfile /home/student/test/Dockerfile
+  cd test/
+  sudo podman build -t myapp:1.0 .
+
+
+
+
+output:  curl http://10.88.0.8:3030/opt/app-root/
+
+
+
+
 
 cHECK SIZE REMAINING IN DISK -DF -H.
 
