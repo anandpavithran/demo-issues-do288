@@ -1,0 +1,13 @@
+Chapter-2 
+Demo of Dockerfile instructon-ONBUILD -Work only with one ONBUILD instruction given in last of file.
+
+Example: . at LAST ALWAYS
+sudo podman image build --no-cache --layers=false --format docker -t children:1.0 .
+
+
+Chapter-5
+
+Demo of S2I not working with cprogram somtimes got hanged.
+
+
+cHECK SIZE REMAINING IN DISK -DF -H.
