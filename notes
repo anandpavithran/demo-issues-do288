@@ -43,3 +43,14 @@ JUST PUSH
 UPDATE HOOK
 
 IMAGE SEND IN MAIL -SEARCH FOR 
+
+DEMO OF BLUE GREEN AND AB DEPLOYMENT
+###########################
+CREATE TWO DEPLOYMENTS BLUE AND GREEN
+oc expose svc blue --name web --hostname=bg.apps.ocp-ap4.prod.nextcle.com
+oc set route-backends web
+oc set route-backends web blue=90 green=10
+oc set route-backends web
+curl http://bg.apps.ocp-ap4.prod.nextcle.com
+#############################
+
