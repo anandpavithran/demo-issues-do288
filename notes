@@ -64,3 +64,22 @@ DEMO OF INTERNAL DNS
 2] get in to pod
 3] cat /etc/resolv.conf
 4] dig service.project.svc.cluster.local
+
+DEMO OF NETWORK
+###############
+DEFAULT -NETWORKPOLICY
+ oc get -n openshift-network-operator deployment/network-operator
+ oc get clusteroperator/network
+Viewing the cluster network configuration 
+ oc describe network.config/cluster
+ 
+ 
+ Cluster Network Operator example CR
+ #####################################
+ defaultNetwork:
+  type: OpenShiftSDN 
+  openshiftSDNConfig: 
+    mode: NetworkPolicy 
+    mtu: 1450 
+    vxlanPort: 4789  
+ 
