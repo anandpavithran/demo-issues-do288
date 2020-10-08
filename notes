@@ -55,5 +55,12 @@ curl http://bg.apps.ocp-ap4.prod.nextcle.com
 #############################
 
 DEMO OF SCC -SA
-
+#################
 oc set  serviceaccount deployment/deploymentconfig deployment-name serviceaccount-name
+
+DEMO OF INTERNAL DNS
+####################
+1] DEPLOY THE app using quay.io/anandpavithran/internal-dns:1.0 or github/anandpavithran/openshift-internal-dns-demo
+2] get in to pod
+3] cat /etc/resolv.conf
+4] dig service.project.svc.cluster.local
